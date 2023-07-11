@@ -50,12 +50,8 @@ for a in range(1, 11):
     end = 88000
     for i, total_data in strata:
         total = int(a * total_data)
-        # print(f"total data {i} = {total}")
         data = [random.randint(start, end) for _ in range(0, total)]
         result = json.dumps({"data": data})
-        # print(f"processing {i}")
-        # print(f"start number = {start}")
-        # print(f"end number = {end}")
         with open(f'data/RandStratified{a * 1000}/{i.replace(" ", "_")}.json', "w") as f:
             f.write(result)
         start = end
